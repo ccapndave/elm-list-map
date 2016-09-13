@@ -1,5 +1,6 @@
 module ListMap exposing
   ( ListMap
+  , empty
   , get
   , set
   )
@@ -10,7 +11,7 @@ comparators or hash functions.
 
 Useful if you know that you aren't going to have a very long list.
 
-@docs ListMap, get, set
+@docs ListMap, empty, get, set
 -}
 
 import List.Extra exposing (find, dropWhile)
@@ -20,6 +21,13 @@ import List.Extra exposing (find, dropWhile)
 -}
 type alias ListMap key value =
   List (key, value)
+
+
+{-| Return an empty ListMap
+-}
+empty : ListMap key value
+empty =
+  []
 
 
 {-| Look for the given key in the ListMap.  If the key can't be found this returns
